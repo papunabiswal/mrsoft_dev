@@ -42,7 +42,7 @@ pipeline {
             script{
                 def mvn = tool 'maven3.9.6';
                 withSonarQubeEnv() {
-                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=devopsodia-backendapp"
+                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=mrsoft"
                 }
             }
         }    
