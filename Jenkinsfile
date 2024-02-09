@@ -14,7 +14,7 @@ pipeline {
         // Repository Name where we will upload the artifacts
         NEXUS_REPOSITORY= "Mrsoft-Snapshot-Artifact"
         // Jenkins credentials id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID= "Nexus"
+        NEXUS_CREDENTIAL_ID= "Nexus_Cred"
         AWS_ACCOUNT_ID="314156154970"
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="devopsodia-backendapp"
