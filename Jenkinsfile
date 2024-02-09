@@ -1,7 +1,7 @@
 pipeline {
    agent any
    tools {
-     maven "Maven3"  
+     maven "maven3.9.6"  
    }
    environment {
         scannerHome = tool "SonarScanner"
@@ -40,7 +40,7 @@ pipeline {
         stage('Static code Analisys'){
             steps {
             script{
-                def mvn = tool 'Maven3';
+                def mvn = tool 'maven3.9.6';
                 withSonarQubeEnv() {
                     sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=devopsodia-backendapp"
                 }
