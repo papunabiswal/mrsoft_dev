@@ -15,9 +15,9 @@ pipeline {
         //NEXUS_REPOSITORY= "Mrsoft-Snapshot-Artifact"
         // Jenkins credentials id to authenticate to Nexus OSS
         //NEXUS_CREDENTIAL_ID= "Nexus"
-        AWS_ACCOUNT_ID="314156154970"
-        AWS_DEFAULT_REGION="us-east-1"
-        IMAGE_REPO_NAME="devopsodia-backendapp"
+        AWS_ACCOUNT_ID="547013421517"
+        AWS_DEFAULT_REGION="ap-south-1"
+        IMAGE_REPO_NAME="mrsoft"
         IMAGE_TAG="${env.BUILD_NUMBER}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
    }
@@ -48,18 +48,18 @@ pipeline {
         }    
             
     }
-        stage ('Deploying Artifact'){
-            steps {
-            script{
-            sh "mvn deploy"
-		//nexusArtifactUploader artifacts: [[artifactId: 'mrsoft', classifier: '', file: 'target/mrsoft.war', type: 'war']], credentialsId: 'Nexus', groupId: 'in.mrsoft', nexusUrl: 'http://3.6.160.77:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Mrsoft-Snapshot-Artifact', version: '0.0.1-SNAPSHOT'
-            }
-        }
-    }
+  //       stage ('Deploying Artifact'){
+  //           steps {
+  //           script{
+  //           sh "mvn deploy"
+		// //nexusArtifactUploader artifacts: [[artifactId: 'mrsoft', classifier: '', file: 'target/mrsoft.war', type: 'war']], credentialsId: 'Nexus', groupId: 'in.mrsoft', nexusUrl: 'http://3.6.160.77:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Mrsoft-Snapshot-Artifact', version: '0.0.1-SNAPSHOT'
+  //           }
+  //       }
+  //   }
         stage('Logging into AWS ECR') {
             steps {
             script {
-                sh "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 314156154970.dkr.ecr.us-east-1.amazonaws.com"
+                sh "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 547013421517.dkr.ecr.ap-south-1.amazonaws.com"
             }
         }
     }
