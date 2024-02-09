@@ -75,8 +75,8 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
-			<name>mrsoft_maven_snapshot</name>
-		       <url>http://http://3.6.160.77:8081/repository/mrsoft_maven_snapshot/</url>
+			<name>Mrsoft-Snapshot-Artifact</name>
+		       <url>http://http://3.6.160.77:8081/repository/Mrsoft-Snapshot-Artifact/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
