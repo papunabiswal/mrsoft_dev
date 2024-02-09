@@ -6,15 +6,15 @@ pipeline {
    environment {
         scannerHome = tool "SonarScanner"
                //This can be nexus 3 or Nexus 2
-        NEXUS_VERSION= "nexus 3"
+        //NEXUS_VERSION= "nexus"
         //This can be http or https
-        NEXUS_PROTOCOL= "http"
+        //NEXUS_PROTOCOL= "http"
         //Where your Nexus is running
-        NEXUS_URL= "3.6.160.77:8081"
+        //NEXUS_URL= "3.6.160.77:8081"
         // Repository Name where we will upload the artifacts
-        NEXUS_REPOSITORY= "Mrsoft-Snapshot-Artifact"
+        //NEXUS_REPOSITORY= "Mrsoft-Snapshot-Artifact"
         // Jenkins credentials id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID= "Nexus"
+        //NEXUS_CREDENTIAL_ID= "Nexus"
         AWS_ACCOUNT_ID="314156154970"
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="devopsodia-backendapp"
