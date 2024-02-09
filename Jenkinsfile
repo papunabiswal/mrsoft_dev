@@ -10,11 +10,11 @@ pipeline {
         //This can be http or https
         NEXUS_PROTOCOL= "http"
         //Where your Nexus is running
-        NEXUS_URL= "35.175.204.142:8081"
+        NEXUS_URL= "3.6.160.77:8081"
         // Repository Name where we will upload the artifacts
-        NEXUS_REPOSITORY= "devopsodia-mvn-backendapp-snapshot"
+        NEXUS_REPOSITORY= "Mrsoft-Snapshot-Artifact"
         // Jenkins credentials id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID= "nexus_creds"
+        NEXUS_CREDENTIAL_ID= "Nexus"
         AWS_ACCOUNT_ID="314156154970"
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="devopsodia-backendapp"
