@@ -26,7 +26,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
             script{
-                git branch: 'main', credentialsId: 'GitHub', url:  'https://github.com/devopsodia/devopsodia-backendapp.git'  
+                git branch: 'dev', credentialsId: 'GitHub', url: 'https://github.com/papunabiswal/mrsoft_dev.git'  
                 }  
             }
         }
