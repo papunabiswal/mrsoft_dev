@@ -6,7 +6,7 @@ pipeline {
    environment {
         scannerHome = tool "SonarScanner"
                //This can be nexus 3 or Nexus 2
-        NEXUS_VERSION= "nexus3"
+        NEXUS_VERSION= "nexus 3"
         //This can be http or https
         NEXUS_PROTOCOL= "http"
         //Where your Nexus is running
