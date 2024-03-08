@@ -15,9 +15,9 @@ pipeline {
         //NEXUS_REPOSITORY= "Mrsoft-Snapshot-Artifact"
         // Jenkins credentials id to authenticate to Nexus OSS
         //NEXUS_CREDENTIAL_ID= "Nexus"
-        AWS_ACCOUNT_ID="547013421517"
+        AWS_ACCOUNT_ID="381492085690"
         AWS_DEFAULT_REGION="ap-south-1"
-        IMAGE_REPO_NAME="mrsoft"
+        IMAGE_REPO_NAME="backend-dev"
         IMAGE_TAG="${env.BUILD_NUMBER}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
    }
@@ -59,7 +59,7 @@ pipeline {
         stage('Logging into AWS ECR') {
             steps {
             script {
-                sh "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 547013421517.dkr.ecr.ap-south-1.amazonaws.com"
+                sh "aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 381492085690.dkr.ecr.ap-south-1.amazonaws.com"
             }
         }
     }
