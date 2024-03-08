@@ -6,7 +6,7 @@ pipeline {
    environment {
         scannerHome = tool "sonar-scanner"
                //This can be nexus 3 or Nexus 2
-        //NEXUS_VERSION= "nexus"
+        NEXUS_VERSION= "nexus"
         //This can be http or https
         NEXUS_PROTOCOL= "http"
         //Where your Nexus is running
@@ -52,7 +52,7 @@ pipeline {
             steps {
             script{
             // sh "mvn deploy"
-		nexusArtifactUploader credentialsId: 'Nexus', groupId: '', nexusUrl: 'http://13.232.171.218:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '0.0.1-SNAPSHOT'
+	       sh "nexusArtifactUploader credentialsId: 'Nexus', groupId: '', nexusUrl: 'http://13.232.171.218:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '0.0.1-SNAPSHOT'"
             }
         }
     }
