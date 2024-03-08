@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mrsoft</groupId>
-	<artifactId>mrsoft</artifactId>
+	<groupId>com.backend-dev</groupId>
+	<artifactId>backend-dev</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
@@ -75,8 +75,8 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
-			<name>Mrsoft-Snapshot-Artifact</name>
-		       <url>http://http://3.6.160.77:8081/repository/Mrsoft-Snapshot-Artifact/</url>
+			<name>Backend-Artifact</name>
+		       <url>http://13.232.171.218:8081/repository/Backend-Artifact/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
