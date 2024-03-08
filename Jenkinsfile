@@ -4,7 +4,7 @@ pipeline {
      maven "maven3.9.6"  
    }
    environment {
-        scannerHome = tool "SonarScanner"
+        scannerHome = tool "sonar-scanner"
                //This can be nexus 3 or Nexus 2
         //NEXUS_VERSION= "nexus"
         //This can be http or https
@@ -42,7 +42,7 @@ pipeline {
             script{
                 def mvn = tool 'maven3.9.6';
                 withSonarQubeEnv() {
-                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=mrsoft"
+                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=backend-dev"
                 }
             }
         }    
