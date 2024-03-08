@@ -48,14 +48,14 @@ pipeline {
         }    
             
     }
-  //       stage ('Deploying Artifact'){
-  //           steps {
-  //           script{
-  //           sh "mvn deploy"
-		// //nexusArtifactUploader artifacts: [[artifactId: 'mrsoft', classifier: '', file: 'target/mrsoft.war', type: 'war']], credentialsId: 'Nexus', groupId: 'in.mrsoft', nexusUrl: 'http://3.6.160.77:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Mrsoft-Snapshot-Artifact', version: '0.0.1-SNAPSHOT'
-  //           }
-  //       }
-  //   }
+        stage ('Deploying Artifact'){
+            steps {
+            script{
+            sh "mvn deploy"
+		//nexusArtifactUploader artifacts: [[artifactId: 'mrsoft', classifier: '', file: 'target/mrsoft.war', type: 'war']], credentialsId: 'Nexus', groupId: 'in.mrsoft', nexusUrl: 'http://3.6.160.77:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Mrsoft-Snapshot-Artifact', version: '0.0.1-SNAPSHOT'
+            }
+        }
+    }
         stage('Logging into AWS ECR') {
             steps {
             script {
