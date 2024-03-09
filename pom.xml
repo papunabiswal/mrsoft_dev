@@ -76,7 +76,7 @@
 		<snapshotRepository>
 			<id>nexus</id>
 			<name>Backend-Artifact</name>
-		       <url>http://13.232.171.218:8081/repository/Backend-Artifact/</url>
+		       <url>http://13.233.105.132:8081/repository/Backend-Artifact/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
