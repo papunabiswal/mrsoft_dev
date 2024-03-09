@@ -72,11 +72,10 @@ pipeline {
                         protocol: 'http',
                         repository: 'Backend-Artifact',
                         version: '0.0.1-SNAPSHOT'
-                    )
+		    )
                 }
             }
         }
-    }
         stage('Logging into AWS ECR') {
             steps {
             script {
