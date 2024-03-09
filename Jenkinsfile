@@ -63,17 +63,23 @@ pipeline {
  //    }
 	    stage('Upload to Nexus') {
             steps {
-                script {
-                    nexusArtifactUploader(
-                        credentialsId: 'Nexus',
-                        groupId: 'com.backend-dev',
-                        nexusUrl: '13.233.105.132:8081',
-                        nexusVersion: 'nexus3',
-                        protocol: 'http',
-                        repository: 'Backend-Artifact',
-                        version: '0.0.1'
-		    )
-                }
+                nexusArtifactUploader(
+                    nexusVersion: 'nexus3',
+                    protocol: 'http',
+                    nexusUrl: 'http://13.233.105.132:8081',
+                    groupId: 'com.backend-dev',
+                    version: '1.0.0',
+                    repository: 'Backend-Artifact',
+                    credentialsId: 'nexus3',
+                    artifacts: [
+                        [
+                            artifactId: 'Backend-Artifact',
+                            // file: 'path/to/your/artifact.jar',
+                            type: 'war'
+                        ],
+                        // Add additional artifacts as needed
+                    ]
+                )
             }
         }
         stage('Logging into AWS ECR') {
