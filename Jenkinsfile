@@ -113,5 +113,13 @@ pipeline {
             }
         }
     }
+    
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                // Delete the workspace directory
+                deleteDir()
+            }
+        }
    }
 }
