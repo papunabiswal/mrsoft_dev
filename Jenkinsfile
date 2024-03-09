@@ -48,14 +48,14 @@ pipeline {
         }    
             
     }
-    //     stage ('Deploying Artifact'){
-    //         steps {
-    //         script{
-    //         sh "mvn deploy"
-	   //     // sh "nexusArtifactUploader credentialsId: 'Nexus', groupId: '', nexusUrl: 'http://13.232.171.218:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '0.0.1-SNAPSHOT'"
-    //         }
-    //     }
-    // }
+        stage ('Deploying Artifact'){
+            steps {
+            script{
+            // sh "mvn deploy"
+	       nexusArtifactUploader credentialsId: 'Nexus', groupId: '', nexusUrl: '13.233.105.132:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '3.66.0-02'
+            }
+        }
+    }
         stage('Logging into AWS ECR') {
             steps {
             script {
