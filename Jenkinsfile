@@ -71,7 +71,7 @@ pipeline {
                         nexusVersion: 'nexus3',
                         protocol: 'http',
                         repository: 'Backend-Artifact',
-                        version: '0.0.1-SNAPSHOT'
+                        version: '0.0.1'
 		    )
                 }
             }
