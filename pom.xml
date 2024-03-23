@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.backend-dev</groupId>
-	<artifactId>Backend-Artifact</artifactId>
+	<artifactId>demo-artifact</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
@@ -75,8 +75,8 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>nexus</id>
-			<name>Backend-Artifact</name>
-		       <url>http://13.233.105.132:8081/repository/Backend-Artifact/</url>
+			<name>demo-artifact</name>
+		       <url>http://13.233.155.7:8081/repository/demo-artifact/</url>
 		</snapshotRepository>
 	</distributionManagement>
 </project>
