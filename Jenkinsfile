@@ -18,5 +18,13 @@ pipeline {
             } 
         }    
         }
+        stage ('Deploying Artifact'){
+            steps {
+            script{
+            sh "mvn deploy"
+	       // sh "nexusArtifactUploader credentialsId: 'Nexus', groupId: 'com.backend-dev', nexusUrl: '13.233.155.7:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '0.0.1-SNAPSHOT'"
+            }
+        }
+    }
    }
 }
