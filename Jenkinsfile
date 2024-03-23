@@ -4,17 +4,17 @@ pipeline {
      maven "maven3.9.6"  
    }
    environment {
-        scannerHome = tool "sonar-scanner"
+        // scannerHome = tool "sonar-scanner"
         //This can be nexus 3 or Nexus 2
-        // NEXUS_VERSION= "nexus3"
+        NEXUS_VERSION= "nexus3"
         //This can be http or https
-        // NEXUS_PROTOCOL= "http"
+        NEXUS_PROTOCOL= "http"
         //Where your Nexus is running
-        // NEXUS_URL= "13.233.105.132:8081"
+        NEXUS_URL= "13.233.155.7:8081"
         // Repository Name where we will upload the artifacts
-        // NEXUS_REPOSITORY= "Backend-Artifact"
+        NEXUS_REPOSITORY= "demo-artifact"
         // Jenkins credentials id to authenticate to Nexus OSS
-        // NEXUS_CREDENTIAL_ID= "Nexus"
+        NEXUS_CREDENTIAL_ID= "Nexus"
         AWS_ACCOUNT_ID="381492085690"
         AWS_DEFAULT_REGION="ap-south-1"
         IMAGE_REPO_NAME="backend-dev"
@@ -37,51 +37,51 @@ pipeline {
             } 
         }    
         }
-        stage('Static code Analisys'){
-            steps {
-            script{
-                def mvn = tool 'maven3.9.6';
-                withSonarQubeEnv() {
-                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=backend-dev"
-                }
-            }
-        }    
-            
-    }
-    //     stage ('Deploying Artifact'){
+    //     stage('Static code Analisys'){
     //         steps {
     //         script{
-    //         // sh "mvn deploy"
-	   //     sh "nexusArtifactUploader credentialsId: 'Nexus', groupId: 'com.backend-dev', nexusUrl: '13.233.105.132:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '0.0.1-SNAPSHOT'"
+    //             def mvn = tool 'maven3.9.6';
+    //             withSonarQubeEnv() {
+    //                 sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=backend-dev"
+    //             }
     //         }
-    //     }
+    //     }    
+            
     // }
-	// stage ('Deploying Artifact'){
- //            steps {
- //              nexusArtifactUploader credentialsId: 'Nexus', groupId: 'com.backend-dev', nexusUrl: '13.233.105.132:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '0.0.1-SNAPSHOT'
- //        }
- //    }
-	    stage('Upload to Nexus') {
+        stage ('Deploying Artifact'){
             steps {
-                nexusArtifactUploader(
-                    nexusVersion: 'nexus3',
-                    protocol: 'http',
-                    nexusUrl: 'http://13.233.105.132:8081',
-                    groupId: 'com.backend-dev',
-                    version: '1.0.0',
-                    repository: 'Backend-Artifact',
-                    credentialsId: 'nexus3',
-                    artifacts: [
-                        [
-                            artifactId: 'Backend-Artifact',
-                            // file: 'path/to/your/artifact.jar',
-                            type: 'war'
-                        ],
-                        // Add additional artifacts as needed
-                    ]
-                )
+            script{
+            sh "mvn deploy"
+	       // sh "nexusArtifactUploader credentialsId: 'Nexus', groupId: 'com.backend-dev', nexusUrl: '13.233.155.7:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Backend-Artifact', version: '0.0.1-SNAPSHOT'"
             }
         }
+    }
+	// stage ('Deploying Artifact'){
+ //            steps {
+ //              nexusArtifactUploader credentialsId: 'Nexus', groupId: 'com.backend-dev', nexusUrl: '13.233.105.132:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'demo-artifact', version: '0.0.1-SNAPSHOT'
+ //        }
+ //    }
+	    // stage('Upload to Nexus') {
+     //        steps {
+     //            nexusArtifactUploader(
+     //                nexusVersion: 'nexus3',
+     //                protocol: 'http',
+     //                nexusUrl: 'http://13.233.105.132:8081',
+     //                groupId: 'com.backend-dev',
+     //                version: '1.0.0',
+     //                repository: 'Backend-Artifact',
+     //                credentialsId: 'nexus3',
+     //                artifacts: [
+     //                    [
+     //                        artifactId: 'Backend-Artifact',
+     //                        // file: 'path/to/your/artifact.jar',
+     //                        type: 'war'
+     //                    ],
+     //                    // Add additional artifacts as needed
+     //                ]
+     //            )
+     //        }
+     //    }
         stage('Logging into AWS ECR') {
             steps {
             script {
