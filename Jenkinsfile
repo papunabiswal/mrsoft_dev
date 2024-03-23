@@ -26,7 +26,7 @@ pipeline {
         stage('Git Checkout') {
             steps {
             script{
-                git branch: 'dev', credentialsId: 'GitHub', url: 'https://github.com/papunabiswal/mrsoft_dev.git'  
+                git branch: 'dev', url: 'https://github.com/papunabiswal/mrsoft_dev_backend.git' 
                 }  
             }
         }
