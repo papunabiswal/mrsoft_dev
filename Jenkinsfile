@@ -14,12 +14,12 @@ pipeline {
         // Repository Name where we will upload the artifacts
         NEXUS_REPOSITORY= "demo-artifact"
         // Jenkins credentials id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID= "Nexus"
-        AWS_ACCOUNT_ID="381492085690"
-        AWS_DEFAULT_REGION="ap-south-1"
-        IMAGE_REPO_NAME="backend-dev"
-        IMAGE_TAG="${env.BUILD_NUMBER}"
-        REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+        // NEXUS_CREDENTIAL_ID= "Nexus"
+        // AWS_ACCOUNT_ID="381492085690"
+        // AWS_DEFAULT_REGION="ap-south-1"
+        // IMAGE_REPO_NAME="backend-dev"
+        // IMAGE_TAG="${env.BUILD_NUMBER}"
+        // REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
    }
 
     stages {
