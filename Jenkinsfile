@@ -3,24 +3,24 @@ pipeline {
    tools {
      maven "maven3.9.6"  
    }
-   environment {
-        // scannerHome = tool "sonar-scanner"
-        //This can be nexus 3 or Nexus 2
-        NEXUS_VERSION= "nexus3"
-        //This can be http or https
-        NEXUS_PROTOCOL= "http"
-        //Where your Nexus is running
-        NEXUS_URL= "13.233.155.7:8081"
-        // Repository Name where we will upload the artifacts
-        NEXUS_REPOSITORY= "demo-artifact"
-        // Jenkins credentials id to authenticate to Nexus OSS
-        // NEXUS_CREDENTIAL_ID= "Nexus"
-        // AWS_ACCOUNT_ID="381492085690"
-        // AWS_DEFAULT_REGION="ap-south-1"
-        // IMAGE_REPO_NAME="backend-dev"
-        // IMAGE_TAG="${env.BUILD_NUMBER}"
-        // REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
-   }
+   // environment {
+   //      // scannerHome = tool "sonar-scanner"
+   //      //This can be nexus 3 or Nexus 2
+   //      NEXUS_VERSION= "nexus3"
+   //      //This can be http or https
+   //      NEXUS_PROTOCOL= "http"
+   //      //Where your Nexus is running
+   //      NEXUS_URL= "13.233.155.7:8081"
+   //      // Repository Name where we will upload the artifacts
+   //      NEXUS_REPOSITORY= "demo-artifact"
+   //      // Jenkins credentials id to authenticate to Nexus OSS
+   //      // NEXUS_CREDENTIAL_ID= "Nexus"
+   //      // AWS_ACCOUNT_ID="381492085690"
+   //      // AWS_DEFAULT_REGION="ap-south-1"
+   //      // IMAGE_REPO_NAME="backend-dev"
+   //      // IMAGE_TAG="${env.BUILD_NUMBER}"
+   //      // REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+   // }
 
     stages {
         stage('Git Checkout') {
