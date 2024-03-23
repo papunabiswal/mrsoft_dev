@@ -11,5 +11,12 @@ pipeline {
                 }  
             }
         }
+        stage ('Maven Goal'){
+            steps {
+            script{
+            sh "mvn clean install package"
+            } 
+        }    
+        }
    }
 }
